@@ -1,4 +1,5 @@
 .card {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 250px;
   border: none; /* Remove default border */
   border-radius: 12px; /* Smoother corners */

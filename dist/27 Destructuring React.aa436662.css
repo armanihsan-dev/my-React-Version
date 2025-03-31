@@ -1,8 +1,61 @@
 .card {
-  border: 1px solid #000;
-  border-radius: 8px;
+  background: #fff;
+  border: none;
+  border-radius: 12px;
   width: 250px;
+  font-family: Gill Sans, Gill Sans MT, Calibri, Trebuchet MS, sans-serif;
+  transition: all .3s;
+  position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px #00000014;
+}
+
+.card:before {
+  content: "";
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  opacity: .7;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 12px;
+  padding: 2px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  mask-composite: exclude;
+  mask-mode: match-source, match-source;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px #0000001f;
+}
+
+.card:hover:before {
+  opacity: 1;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45aaf2);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200%;
+  }
+}
+
+.card:hover:after {
+  content: "";
+  background: linear-gradient(to right, #fff0 0%, #ffffff1a 50%, #fff0 100%);
+  width: 200%;
+  height: 200%;
+  animation: 1.5s infinite shine;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  transform: rotate(30deg);
 }
 
 .card img {
